@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node*next;
+};
+void deleteFirstNode(struct Node** head) {
+    if (*head==NULL) {
+        printf("List is empty. Nothing to delete.\n");
+        return;
+    }                                                                                                                                          
+    struct Node*temp=*head;
+    *head=temp->next; 
+    free(temp);
+   printf("Node deleted from the beginning.\n");
+}
+int main() {
+    struct Node*head=(struct Node*)malloc(sizeof(struct Node));
+    head->data=10;
+    head->next=NULL;
+    struct Node*newNode=(struct Node*)malloc(sizeof(struct Node));
+    newNode->data=20;
+    newNode->next=NULL;
+    head->next=newNode;
+    printf("Original List:%d->%d\n",head->data,head->next->data);
+    deleteFirstNode(&head);
+    if (head!=NULL) {
+        printf("Modified List: %d\n",head->data);
+    } else {
+        printf("List is empty after deletion.\n");
+    }
+      return 0;
+}
