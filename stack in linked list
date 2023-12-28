@@ -1,0 +1,40 @@
+#include<stdio.h>
+struct node {
+int data ;
+struct node*next;
+}
+*top=null;
+Void push (int);
+void pop();
+void display();
+int stack[size],top=-1;
+void push (int value) {
+*new node ;
+new node=(struct node*)malloc(sizeof(struct node));
+newnode->data=value;
+if(top==null)
+newnode->next=null;
+else
+newnode->next=top;
+top=newnode;
+printf("\ninsertion is success!!!\n");
+}
+void pop(){
+struct node*
+}
+struct node*temp=top;
+printf("\ndeleted element:%d",temp->data);
+top=temp->next;
+free(temp);
+}
+}
+void display() {
+	if(top==null)
+	printf("\nstack is empty!!!\n");
+	else{
+		struct node*temp=top;
+		while(temp->next!=null) {
+			printf("%d-->");
+		}
+	}
+} 
